@@ -6,5 +6,15 @@
 </head>
 <body>
     <p>Get your greeting <a href="/greeting">here</a></p>
+    <form action="/greeting.html" method="get" id="nameform">
+        name: <input type="text" name="name"><br>
+
+    </form>
+
+    <p>The button below is outside the form element, but still part of the form.</p>
+
+    <button type="submit" form="nameform" value="Submit">Submit</button>
+
+
 </body>
 </html>
