@@ -1,10 +1,21 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
-<head> 
-    <title>Getting Started: Serving Web Content</title> 
+<head>
+    <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <p th:text="'Hello, ' + ${name} + '!'" />
+<p th:text="'Hello, ' + ${name} + '!'" />
+<form action="/greeting.html" method="get" id="nameform">
+    name: <input type="text" name="name"><br>
+
+</form>
+
+<p>The button below is outside the form element, but still part of the form.</p>
+
+<button type="submit" form="nameform" value="Submit">Submit</button>
+
+<p><b>Note:</b> The form attribute does not work in IE.</p>
 </body>
 </html>
+
