@@ -4,22 +4,16 @@
     <title>Getting Started: Serving Web Content</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 </head>
-<body style="background-color:blue;">
+<body style="background-color:Red;">
 <a href="/">home</a>
 <br>
-<p>Hurra!</p>
-<p th:text="'bara ' + ${gissningar} + ' gissningar!'"/>
+
 <p th:text="'bästa resultat ' + ${highscore} + ' !'"/>
 
 <p>Vill du spela igen!</p>
 
 <a href="/"> JA!</a>
-<br><br><br>
 
-<form action="/reset" method="get">
-    <button type="submit" value="Submit">reset bästa resultat</button>
-
-</form>
 
 </body>
 </html>

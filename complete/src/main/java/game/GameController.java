@@ -16,7 +16,7 @@ public class GameController {
     }
 
     @GetMapping("/gissa")
-    public String greeting(@RequestParam(name = "ledtrad", required = false, defaultValue = "") String ledtrad, Model model) {
+    public String gissa(@RequestParam(name = "ledtrad", required = false, defaultValue = "") String ledtrad, Model model) {
         System.out.printf("-%s-\n", ledtrad);
         if (ledtrad.equals("")) {
             game.resetGame();
@@ -49,15 +49,22 @@ public class GameController {
     }
 
     @GetMapping("/vann")
-
     public String vann(@RequestParam(name = "gissningar", required = false, defaultValue = " inget ") String name, Model model) {
         if (game.getGissningar() < game.getHighScore()) game.setHighScore(game.getGissningar());
 
         model.addAttribute("gissningar", game.getGissningar());
-         model.addAttribute("highscore", game.getHighScore());
+        model.addAttribute("highscore", game.getHighScore());
 
         return "vann";
     }
 
+    @GetMapping("/reset")
+    public String reset( @RequestParam(name = "gissningar", required = false, defaultValue = " inget ") String name,  Model model) {
+        game.setHighScore(9999);
+
+        model.addAttribute("highscore", game.getHighScore());
+
+        return "reset";
+    }
 
 }

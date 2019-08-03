@@ -11,7 +11,7 @@ public class Game {
 
     private int gissning;
 
-    private int gissningar=0;
+    private int gissningar=1;
 
     private int highscore=Integer.MAX_VALUE;
 
@@ -19,7 +19,7 @@ public class Game {
     public int resetGame() {
         minsta = 0;
         mesta = 100;
-        gissningar=0;
+        gissningar=1;
 
         return 0;
     }
